@@ -2,4 +2,7 @@
 
 var car = require('js/car.js');
 
-console.log(car)
+console.log(car);
+
+
+
