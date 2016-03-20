@@ -9,7 +9,6 @@ var car =  {
     seats: 4,
     passengers: [],
 
-
     put: function(){
 
         if (this.passengers.length === this.seats) {
@@ -26,17 +25,21 @@ var car =  {
 
     drive: function(speed){
 
+        if (!this.passengers[0]) {
 
-        if (this.passengers.length === 0) {
-            return;
+            this.speed = 0;
         }
-
-        if (speed > this.maxSpeed)
+        else if (speed > this.maxSpeed)
         {
-            speed = this.maxSpeed;
+            this.speed = this.maxSpeed;
         }
-        else
-            speed =  speed;
+        else  if (speed === undefined) {
+            this.speed = this.defaultSpeed;
+        }
+        else {
+            this.speed = speed;
+        }
+
 
     }
 
